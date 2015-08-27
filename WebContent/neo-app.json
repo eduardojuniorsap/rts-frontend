@@ -2,13 +2,13 @@
       "authenticationMethod": "none",
     "routes": [
         {
-            "path": "/openweathermap",
+            "path": "/rtsapi",
             "target":
             {
                 "type": "destination",
-                "name": "openweather"
+                "name": "rtsapi"
             },
-            "description": "OpenWeather System"
+            "description": "RTS"
         },
         {
                 "path": "/sapui5",
