@@ -54,7 +54,9 @@ sap.controller('SapController', function($scope, $http, $location) {
 	
 	$scope.getEngineers = function() {
 		
-        $http.get("/rtsapi/")
+		$rtsapi = "http://preview.f8xok59qcjbawcdihguq3io59amaq0k9k6cfrp7ljv23mcxr.box.codeanywhere.com/rtsapi/public/engineer"
+		
+        $http.get($rtsapi)
         .then (
           function(data) {
         	  console.log(data);
