@@ -18,7 +18,6 @@ sap.config(['$routeProvider', '$controllerProvider', function($routeProvider, $c
 }]);
 
 sap.controller('SapController', function($scope, $http, $location) {
-	console.log($scope);
 	
 	$scope.login = {}
 	
@@ -28,17 +27,45 @@ sap.controller('SapController', function($scope, $http, $location) {
         .then (
           function(obj) {
         	  data = obj.data;
-        	  $scope.login.user = data.id;
-        	  $scope.login.firstname = data.firstname;
         	  console.log(data);
-        	  console.log(data.firstname);
+        	  $scope.login = data;
+        	  $scope.login.user = data.id;
+        	  $scope.login.is_customer = false;
+        	  $scope.login.is_engineer = false;
         	  
         	  if (data) {
+        		  
+        		  if (data.access_type == "customer") {
+        			  $scope.login.is_customer = true;
+        		  }
+        		  
+        		  if (data.access_type == "engineer") {
+        			  $scope.login.is_engineer = true;
+        		  }
+        		  
         		  $location.path("/main");
         	  }
           }
         );
+        
+        $scope.getEngineers();
 		
 	}
+	
+	$scope.getEngineers = function() {
+		
+        $http.get("/rtsapi/engineer")
+        .then (
+          function(data) {
+        	  console.log(data);
+          }
+        );
+		
+	}
+	
+	
+	
+	
+	
 		
 });

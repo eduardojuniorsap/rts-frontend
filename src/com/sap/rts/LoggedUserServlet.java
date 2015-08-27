@@ -51,14 +51,22 @@ public class LoggedUserServlet extends HttpServlet {
 			JObject.put("email", user.getAttribute("email") );
 			JObject.put("firstname", user.getAttribute("firstname") );
 			JObject.put("lastname", user.getAttribute("lastname") );
+			
+			String userType = request.getRemoteUser();
+			char a_char = userType.charAt(0);
+			
+			String access_type = "customer";
+			
+			if (a_char == 'i' || a_char == 'I') {
+				access_type = "engineer";
+			}
+						
+			JObject.put("access_type", access_type );
 
 			printout.print(JObject);
 			printout.flush();
 			
-			//response.getWriter().println( user.getAttribute("email") );
-			//response.getWriter().println( request.getRemoteUser() );
-			
-			
+						
 		} catch (PersistenceException | UnsupportedUserAttributeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
