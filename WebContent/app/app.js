@@ -49,25 +49,28 @@ sap.controller('SapController', function($scope, $http, $location) {
         );
         
         $scope.getEngineers();
+        $scope.postEngineer();
 		
 	}
 	
 	$scope.getEngineers = function() {
-		
-		$rtsapi = "http://preview.f8xok59qcjbawcdihguq3io59amaq0k9k6cfrp7ljv23mcxr.box.codeanywhere.com/rtsapi/public/engineer"
-		
-        $http.get($rtsapi)
+				
+        $http.get("ProxyServlet")
         .then (
           function(data) {
         	  console.log(data);
           }
         );
-		
 	}
 	
-	
-	
-	
-	
+	$scope.postEngineer = function() {
+		
+        $http.post("ProxyServlet", {email:'eduardo.junior@sap.com'})
+        .then (
+          function(data) {
+        	  console.log(data);
+          }
+        );
+	}	
 		
 });

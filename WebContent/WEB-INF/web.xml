@@ -14,6 +14,10 @@
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/IndexServlet</url-pattern>
   </servlet-mapping>
+  <resource-ref>
+    <res-ref-name>rtsapi</res-ref-name>
+    <res-type>com.sap.core.connectivity.api.http.HttpDestination</res-type>
+  </resource-ref>
   <login-config>
     <auth-method>FORM</auth-method>
   </login-config>

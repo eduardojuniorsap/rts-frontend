@@ -51,6 +51,7 @@ public class LoggedUserServlet extends HttpServlet {
 			JObject.put("email", user.getAttribute("email") );
 			JObject.put("firstname", user.getAttribute("firstname") );
 			JObject.put("lastname", user.getAttribute("lastname") );
+			JObject.put("test", user.getAttribute("lastname") );
 			
 			String userType = request.getRemoteUser();
 			char a_char = userType.charAt(0);
