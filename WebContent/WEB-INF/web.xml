@@ -18,6 +18,11 @@
     <res-ref-name>rtsapi</res-ref-name>
     <res-type>com.sap.core.connectivity.api.http.HttpDestination</res-type>
   </resource-ref>
+    <resource-ref>
+    <res-ref-name>engineer</res-ref-name>
+    <res-type>com.sap.core.connectivity.api.http.HttpDestination</res-type>
+  </resource-ref>
+  
   <login-config>
     <auth-method>FORM</auth-method>
   </login-config>
