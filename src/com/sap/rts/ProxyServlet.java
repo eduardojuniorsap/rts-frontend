@@ -44,13 +44,14 @@ public class ProxyServlet extends HttpServlet {
             Context ctx = new InitialContext();
             HttpDestination destination = null;
             if (destinationName != null) {
-                DestinationFactory destinationFactory = (DestinationFactory) ctx.lookup(DestinationFactory.JNDI_NAME);
-                destination = (HttpDestination) destinationFactory.getDestination(destinationName);
+                //DestinationFactory destinationFactory = (DestinationFactory) ctx.lookup(DestinationFactory.JNDI_NAME);
+                //destination = (HttpDestination) destinationFactory.getDestination(destinationName);
             } else {
                 // The default request to the Servlet will use outbound-internet-destination
                 destinationName = "rtsapi";
-                destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
+                //destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
             }
+            destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
 
             // Create HTTP client
             httpClient = destination.createHttpClient();
@@ -134,13 +135,14 @@ public class ProxyServlet extends HttpServlet {
             Context ctx = new InitialContext();
             HttpDestination destination = null;
             if (destinationName != null) {
-                DestinationFactory destinationFactory = (DestinationFactory) ctx.lookup(DestinationFactory.JNDI_NAME);
-                destination = (HttpDestination) destinationFactory.getDestination(destinationName);
+                //DestinationFactory destinationFactory = (DestinationFactory) ctx.lookup(DestinationFactory.JNDI_NAME);
+                //destination = (HttpDestination) destinationFactory.getDestination(destinationName);
             } else {
                 // The default request to the Servlet will use outbound-internet-destination
                 destinationName = "rtsapi";
-                destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
+                //destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
             }
+            destination = (HttpDestination) ctx.lookup("java:comp/env/" +  destinationName);
 
             // Create HTTP client
             httpClient = destination.createHttpClient();
