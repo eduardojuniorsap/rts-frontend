@@ -55,7 +55,7 @@ sap.controller('SapController', function($scope, $http, $location) {
 	
 	$scope.getEngineers = function() {
 				
-        $http.get("ProxyServlet/engineer")
+        $http.get("ProxyServlet?destname=engineer")
         .then (
           function(data) {
         	  console.log(data);
@@ -65,7 +65,7 @@ sap.controller('SapController', function($scope, $http, $location) {
 	
 	$scope.postEngineer = function() {
 		
-        $http.post("ProxyServlet/engineer", {email:'manuu@sap.com'})
+        $http.post("ProxyServlet?destname=engineer", {email:'manuu@sap.com'})
         .then (
           function(data) {
         	  console.log(data);
