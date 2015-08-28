@@ -1,23 +1,23 @@
 {
-      "authenticationMethod": "none",
+"authenticationMethod": "none",
     "routes": [
         {
-            "path": "/rtsapi",
-            "target":
+"path": "/rtsapi",
+"target":
             {
-                "type": "destination",
-                "name": "rtsapi"
+"type": "destination",
+"name": "rtsapi"
             },
-            "description": "RTS"
+"description": "RTS"
         },
         {
-                "path": "/sapui5",
-                "target": {
-                                "type": "service",
-                                "name": "sapui5",
-                                "entryPath":"/resources"
-                },
-                "description": "SAPUI5"
+"path": "/resources",
+"target": {
+"type": "service",
+"name": "sapui5",
+"entryPath":"/resources"
+            },
+"description": "SAPUI5"
         }
     ]
 }
